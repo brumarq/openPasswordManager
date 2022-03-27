@@ -1,4 +1,4 @@
-# log_calendar
+# Open Password Manager
 
 ## Project setup
 ```

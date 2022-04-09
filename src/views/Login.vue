@@ -33,7 +33,7 @@
     <small class="pt-3">
         Don't have an account? <a href="/signup" id="signupLink"> Sign up</a>
     </small>
-</main>
+  </main>
 </template>
 
 <script>

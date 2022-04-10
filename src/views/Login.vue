@@ -48,8 +48,13 @@ export default {
       errorMessage: null,
     };
   },
+  mounted() {
+  },
   methods: {
     login() {
+      let errorMessageEl = document.getElementById('errorMessage');
+      errorMessageEl.innerHTML = "";
+
       axios.post("http://localhost/users/login", 
         {
           "email": this.email,
@@ -59,7 +64,9 @@ export default {
       .then(result => {
           localStorage.token = result.data.token;
           this.$router.push({ path: '/passwords' })
-      }).catch(error => console.log(error));
+      }).catch((error) => {
+        errorMessageEl.innerHTML = error.response.data.errorMessage;
+      });
     },
   },
 }
